@@ -8,16 +8,32 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script>
-    function run() {
-     // Replace the path with the actual location of your EXE file
-     var path = 'C:\\path\\to\\your\\exe\\file.exe';
+        const BACK = 1;
+        const ARMS = 2;
+        const CARDIO = 3;
+        const CHEST = 4;
+        const LEGS = 5;
+        const REC_CLASS = 6;
+        const POOL = 7;
+        const COURTS = 8;
 
-      // Create a new ActiveXObject for executing system commands
-      var shell = new ActiveXObject('WScript.Shell');
+        const now = new Date();
+        const utcTime = now.getTime() + (now.getTimezoneOffset() * 60000);
+        const time = new Date(utcTime + (3600000 * -5)); // Adjust for Eastern Time
 
-      // Execute the EXE file
-      shell.run(path);
-    }
+        let timeHour = time.getHours();
+
+        if (timeHour < 0) {
+          timeHour = 24 + timeHour;
+        }
+
+        const gymData = new File([""], "dataEntry.txt", {type: "text/plain", lastModified: Date.now()});
+
+        const fileWriter = new FileWriter(gymData, {append: true});
+
+        fileWriter.write(`${timeHour.toString().padStart(2, '0')} ${time.getMinutes().toString().padStart(2, '0')} ${CHEST}\n`);
+
+        fileWriter.close();
     </script>
 </head>
 <body>
