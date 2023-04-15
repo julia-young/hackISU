@@ -7,13 +7,25 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+    function run() {
+     // Replace the path with the actual location of your EXE file
+     var path = 'C:\\path\\to\\your\\exe\\file.exe';
+
+      // Create a new ActiveXObject for executing system commands
+      var shell = new ActiveXObject('WScript.Shell');
+
+      // Execute the EXE file
+      shell.run(path);
+    }
+    </script>
 </head>
 <body>
 
 <div class="container-fluid">
 
     <h1 class="text-center">What are you hitting today?</h1>
-    <button type="button" class="btn btn-info btn-lg">Back</button>
+    <button onclick="run()">Run EXE type="button" class="btn btn-info btn-lg">Back</button>
     <button type="button" class="btn btn-info btn-lg">Arms/Shoulders</button>
     <button type="button" class="btn btn-info btn-lg">Cardio</button>
     <button type="button" class="btn btn-info btn-lg">Chest</button>
@@ -21,6 +33,10 @@
     <button type="button" class="btn btn-info btn-lg">Rec Classes</button>
     <button type="button" class="btn btn-info btn-lg">Pool</button>
     <button type="button" class="btn btn-info btn-lg">Courts</button>
+
+
+
+
 </div>
 
 </body>
