@@ -1,0 +1,22 @@
+.main-page{
+    background-color: rgb(175, 241, 243);
+}
+
+.main-search{
+    border-radius: 10px;
+    
+}
+
+.btn-square-md {
+    width: 200px !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    height: 200px !important;
+    text-align: center;
+    padding: 150px;
+    font: size 11px;
+    background-color: coral;
+}
+.button-container .btn {
+    margin: 10px;
+  }
